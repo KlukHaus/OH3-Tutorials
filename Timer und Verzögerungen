@@ -1,0 +1,28 @@
+// Teil 1: Pause in einer FOR-Schleife:
+
+var logger = Java.type('org.slf4j.LoggerFactory').getLogger('org.openhab.rule.' + ctx.ruleUID);
+
+for(i=0;i<=20;i++){
+  java.lang.Thread.sleep(1000);
+  logger.info("logadoodledoo");
+}
+
+// Teil 2: Timer mit Rücksetzfunktion
+
+var logger = Java.type('org.slf4j.LoggerFactory').getLogger('org.openhab.rule.' + ctx.ruleUID);
+var ScriptExecution = Java.type("org.openhab.core.model.script.actions.ScriptExecution");
+var ZonedDateTime = Java.type("java.time.ZonedDateTime");
+
+if (this.timer != undefined) {
+  this.timer.cancel();
+  this.timer = undefined;
+}
+
+function hamster() {
+  logger.info("logadoodledoo end");
+  this.timer = undefined;
+}
+
+logger.info("logadoodledoo start");
+
+this.timer = ScriptExecution.createTimer(ZonedDateTime.now().plusSeconds(5), hamster);
