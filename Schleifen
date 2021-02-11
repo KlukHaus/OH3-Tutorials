@@ -1,0 +1,39 @@
+// if Schleife
+//----------------------------------------
+var i=1;
+if(i=1)
+{
+  hier passiert was passieren soll...
+}
+else
+{
+  sollte die erste bedingung nicht erfüllt sein, wird diese abgehandelt.
+}
+
+
+// while Schleife
+//----------------------------------------
+var i=0;
+while (i<5)
+{
+  i=i+1;
+  hier passiert was passieren soll...
+}
+
+
+// do - while Schleife
+//----------------------------------------
+var i=0;
+do
+{
+  i=i+1;
+  hier passiert was passieren soll...
+}while (i<5)
+
+
+// for Schleife
+//----------------------------------------
+for(i=0;i<5;i++)
+{
+  hier passiert was passieren soll...
+}
